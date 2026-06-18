@@ -438,12 +438,12 @@ def interactive_shell(ser):
                             socket_number[0] = int(line.split(":")[1].split(",")[0].strip())
                         except (ValueError, IndexError):
                             pass
-                send_at(ser, f'AT#XCONNECT={socket_number[0]},"artists-timid.gl.at.ply.gg",12566', "Connect to test server")
+                send_at(ser, f'AT#XCONNECT={socket_number[0]},"64.181.168.22",5005', "Connect to test server")
 
             elif user_input == "2":
                 n = message_counter[0]
                 log_message(f"{YELLOW}Sending message #{n}...{RESET}")
-                send_at(ser, f'AT#XSEND={socket_number[0]},0,0,"Hello Skylo NTN #{n}"', f"Send message #{n}")
+                send_at(ser, f'AT#XSEND={socket_number[0]},0,0,"Hello Nordic by Skylo #{n}"', f"Send message #{n}")
                 message_counter[0] += 1
 
             elif user_input == "3":
